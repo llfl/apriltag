@@ -137,7 +137,11 @@ int main(int argc, char *argv[])
             line(frame, Point(det->p[2][0], det->p[2][1]),
                      Point(det->p[3][0], det->p[3][1]),
                      Scalar(0xff, 0, 0), 2);
-            circle(frame,Point(det->p[0][0], det->p[0][1]),5,Scalar(0, 0, 0xff));
+            line(frame, Point(det->p[0][0] + (det->p[1][0] - det->p[0][0])/2, det->p[0][1] + (det->p[1][1] - det->p[0][1])/2),
+                     Point(det->p[3][0] + (det->p[1][0] - det->p[0][0])/2 , det->p[3][1] + (det->p[1][1] - det->p[0][1])/2),
+                     Scalar(0, 0xff, 0), 2);
+
+            //p0 为左下，逆时针增长
 
             stringstream ss;
             ss << det->id;
