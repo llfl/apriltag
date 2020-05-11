@@ -137,6 +137,9 @@ int main(int argc, char *argv[])
             line(frame, Point(det->p[2][0], det->p[2][1]),
                      Point(det->p[3][0], det->p[3][1]),
                      Scalar(0xff, 0, 0), 2);
+            line(frame, Point((det->p[0][0] + det->p[0][1]) /2,(det->p[1][0] + det->p[1][1]) /2), 
+                    Point((det->p[0][0] + det->p[0][1]) /2,(det->p[1][0] + det->p[1][1]) /2+100), 
+                    Scalar(0, 0xff, 0), 2);
 
             stringstream ss;
             ss << det->id;
