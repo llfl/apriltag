@@ -93,7 +93,8 @@ int main(int argc, char *argv[])
     } else if (!strcmp(famname, "tagCustom48h12")) {
         tf = tagCustom48h12_create();
     } else {
-        printf("Unrecognized tag family name. Use e.g. \"tag36h11\".\n");
+        tf = tagStandard41h12_create();
+        printf("Unrecognized tag family name. Use default \"tagStandard41h12\".\n");
         exit(-1);
     }
 
@@ -175,6 +176,8 @@ int main(int argc, char *argv[])
         tagStandard52h13_destroy(tf);
     } else if (!strcmp(famname, "tagCustom48h12")) {
         tagCustom48h12_destroy(tf);
+    } else {
+        tagStandard41h12_destroy(tf);
     }
 
 
